@@ -2,7 +2,7 @@ import React from 'react';
 
 const Content = () => {
     return (
-      <div className="lg:ml-64 p-4">
+      <div className="lg:ml-64 p-6">
         <h1 className="font-medium text-center my-6 text-[36px]">
           Main Content
         </h1>

@@ -4,14 +4,21 @@ import down from "../../assets/down.png";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isItem1Open, setIsItem1Open] = useState(false);
+  const [itemStates, setItemStates] = useState({
+    item1: false,
+    item2: false,
+    item3: false,
+  });
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleItem1 = () => {
-    setIsItem1Open(!isItem1Open);
+  const toggleItem = (itemId) => {
+    setItemStates((prevState) => ({
+      ...prevState,
+      [itemId]: !prevState[itemId],
+    }));
   };
 
   return (
@@ -39,20 +46,20 @@ const Sidebar = () => {
           <ul className="mt-8 flex flex-col gap-3">
             <li
               className={`bg-white p-1 flex justify-between items-center cursor-pointer`}
-              onClick={toggleItem1}
+              onClick={() => toggleItem("item1")}
             >
               Item 1
               <span>
                 <img
                   className={`w-4 transition-transform duration-300 transform ${
-                    isItem1Open ? "rotate-180" : ""
+                    itemStates.item1 ? "rotate-180" : ""
                   }`}
                   src={down}
                   alt=""
                 />
               </span>
             </li>
-            {isItem1Open && (
+            {itemStates.item1 && (
               <div className="flex flex-row-reverse text-center">
                 <ul className="flex flex-col gap-1 w-3/4 ">
                   <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
@@ -64,18 +71,60 @@ const Sidebar = () => {
                 </ul>
               </div>
             )}
-            <li className="bg-white p-1 flex justify-between items-center">
+            <li
+              className={`bg-white p-1 flex justify-between items-center cursor-pointer`}
+              onClick={() => toggleItem("item2")}
+            >
               Item 2
               <span>
-                <img className="w-4" src={down} alt="" />
+                <img
+                  className={`w-4 transition-transform duration-300 transform ${
+                    itemStates.item2 ? "rotate-180" : ""
+                  }`}
+                  src={down}
+                  alt=""
+                />
               </span>
             </li>
-            <li className="bg-white p-1 flex justify-between items-center">
+            {itemStates.item2 && (
+              <div className="flex flex-row-reverse text-center">
+                <ul className="flex flex-col gap-1 w-3/4 ">
+                  <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
+                    Item C
+                  </li>
+                  <li className="bg-[#B8B6B6] p-1 flex justify-center items-center pl-6">
+                    Item D
+                  </li>
+                </ul>
+              </div>
+            )}
+            <li
+              className={`bg-white p-1 flex justify-between items-center cursor-pointer`}
+              onClick={() => toggleItem("item3")}
+            >
               Item 3
               <span>
-                <img className="w-4" src={down} alt="" />
+                <img
+                  className={`w-4 transition-transform duration-300 transform ${
+                    itemStates.item3 ? "rotate-180" : ""
+                  }`}
+                  src={down}
+                  alt=""
+                />
               </span>
             </li>
+            {itemStates.item3 && (
+              <div className="flex flex-row-reverse text-center">
+                <ul className="flex flex-col gap-1 w-3/4 ">
+                  <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
+                    Item E
+                  </li>
+                  <li className="bg-[#B8B6B6] p-1 flex justify-center items-center pl-6">
+                    Item F
+                  </li>
+                </ul>
+              </div>
+            )}
           </ul>
         </div>
       </div>
