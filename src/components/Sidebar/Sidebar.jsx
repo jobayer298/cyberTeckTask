@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowDown, FaBars, FaTimes } from "react-icons/fa";
 import down from "../../assets/down.png";
+import Dropdown from "./Dropdown";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,16 +61,7 @@ const Sidebar = () => {
               </span>
             </li>
             {itemStates.item1 && (
-              <div className="flex flex-row-reverse text-center">
-                <ul className="flex flex-col gap-1 w-3/4 ">
-                  <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
-                    Item A
-                  </li>
-                  <li className="bg-[#B8B6B6] p-1 flex justify-center items-center pl-6">
-                    Item B
-                  </li>
-                </ul>
-              </div>
+              <Dropdown menu1={"Item A"} menu2={"Item B"}></Dropdown>
             )}
             <li
               className={`bg-white p-1 flex justify-between items-center cursor-pointer`}
@@ -87,16 +79,7 @@ const Sidebar = () => {
               </span>
             </li>
             {itemStates.item2 && (
-              <div className="flex flex-row-reverse text-center">
-                <ul className="flex flex-col gap-1 w-3/4 ">
-                  <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
-                    Item C
-                  </li>
-                  <li className="bg-[#B8B6B6] p-1 flex justify-center items-center pl-6">
-                    Item D
-                  </li>
-                </ul>
-              </div>
+              <Dropdown menu1={"Item C"} menu2={"Item D"}></Dropdown>
             )}
             <li
               className={`bg-white p-1 flex justify-between items-center cursor-pointer`}
@@ -114,16 +97,7 @@ const Sidebar = () => {
               </span>
             </li>
             {itemStates.item3 && (
-              <div className="flex flex-row-reverse text-center">
-                <ul className="flex flex-col gap-1 w-3/4 ">
-                  <li className="bg-[#B8B6B6] p-1 text-center flex justify-center items-center pl-6">
-                    Item E
-                  </li>
-                  <li className="bg-[#B8B6B6] p-1 flex justify-center items-center pl-6">
-                    Item F
-                  </li>
-                </ul>
-              </div>
+              <Dropdown menu1={"Item E"} menu2={"Item F"}></Dropdown>
             )}
           </ul>
         </div>
