@@ -1,9 +1,8 @@
-# React + Vite
+This is a single responsive page including navbar and sidebar.To run my site you need to follow some simple steps:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### git and node have to be installed in you pc
+### then just clone the code from my repository , from the file location open cmd and run "npm i" command
+### Then run "npm run dev " this command and open the link from cmd in your browser . That's it.
 
-Currently, two official plugins are available:
+- [Live link](https://magenta-gumption-3e2a4e.netlify.app/) uses [Babel](https://babeljs.io/) for Fast Refresh
 
-- [Live link](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# cyberTeckTask" 
